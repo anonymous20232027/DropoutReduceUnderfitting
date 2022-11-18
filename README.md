@@ -43,7 +43,8 @@ Please check [INSTALL.md](INSTALL.md) for installation instructions.
 ## Training
 
 ### Basic Recipe
-We give an example traing command for early dropout/early stochastic depth.
+We give an example traing command for early dropout/early stochastic depth on `ViT-T`.
+- For training on other models, change `--model` accordingly. The main results contain the model `vit_tiny`, `mixer_s32`, `convnext_femto`, `swin_femto`.
 
 **Early Dropout**
 ```
@@ -75,7 +76,7 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py \
 --output_dir ./output/test/
 ```
 
-- For training on other models, change `--model` accordingly. The main results contain the model `vit_tiny`, `mixer_s32`, `convnext_femto`, `swin_femto`.
+
 
 ### Improved Recipe
 
@@ -101,8 +102,6 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py \
 
 - For training on other models, change `--model` accordingly. The main results contain the model `vit_tiny`, `mixer_s32`, `convnext_femto`, `swin_femto`.
 
-## Training
-See [TRAINING.md](TRAINING.md) for training and fine-tuning instructions.
 
 ## Acknowledgement
 This repository is built using the [timm](https://github.com/rwightman/pytorch-image-models) library, [ConvNeXt](https://github.com/facebookresearch/ConvNeXt)
