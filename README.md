@@ -62,18 +62,18 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py \
 --model vit_tiny  --warmup_epochs 50 --epochs 300 \
 --batch_size 128 --lr 4e-3 --update_freq 4 \
 --drop_path 0 --early_drop_path_epochs 50 --early_drop_path_value 0.5 --early_drop_path_mode regular \
---data_path imagenet \
---output_dir ./output/test/
+--data_path /path/to/data/ \
+--output_dir /path/to/results/
 ```
 
 **Late Stochastic Depth**
 ```
 python -m torch.distributed.launch --nproc_per_node=8 main.py \
---model vit_tiny  --warmup_epochs 50 --epochs 300 \
+--model vit_base  --warmup_epochs 50 --epochs 300 \
 --batch_size 128 --lr 4e-3 --update_freq 4 \
 --drop_path 0.4 --early_drop_path_epochs 50 --early_drop_path_value 0 --early_drop_path_mode regular \
---data_path imagenet \
---output_dir ./output/test/
+--data_path /path/to/data/ \
+--output_dir /path/to/results/
 ```
 
 
@@ -96,8 +96,8 @@ python -m torch.distributed.launch --nproc_per_node=8 main.py \
 --model vit_tiny  --warmup_epochs 50 --epochs 600 --mixup 0.3 --cutmix 0.3 \
 --batch_size 64 --lr 4e-3 --update_freq 4 \
 --drop_path 0 --early_drop_path_epochs 50 --early_drop_path_value 0.5 --early_drop_path_mode regular \
---data_path imagenet \
---output_dir ./output/test/
+--data_path /path/to/data/ \
+--output_dir /path/to/results/
 ```
 
 - For training on other models, change `--model` accordingly. The main results contain the model `vit_tiny`, `mixer_s32`, `convnext_femto`, `swin_femto`.
